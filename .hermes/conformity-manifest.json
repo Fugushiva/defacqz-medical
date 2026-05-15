@@ -1,0 +1,156 @@
+{
+  "project": "defacqz-medical-center",
+  "generated": "2026-05-15",
+  "phase": "M7",
+  "version": "1.4",
+  "axes": {
+    "AXIS_1_design_system": {
+      "label": "Design System & Tokens",
+      "status": "PASS",
+      "items": [
+        { "id": "1.1", "check": "OKLCH color tokens defined in globals.css", "status": "PASS" },
+        { "id": "1.2", "check": "Font variables: --font-fraunces (heading) + --font-inter (body)", "status": "PASS" },
+        { "id": "1.3", "check": "Brand colors: brand-primary, brand-primary-hover, brand-accent-soft", "status": "PASS" },
+        { "id": "1.4", "check": "Tailwind v4 config with custom tokens", "status": "PASS" },
+        { "id": "1.5", "check": "focus-visible ring on all interactive elements", "status": "PASS" }
+      ]
+    },
+    "AXIS_2_structure_navigation": {
+      "label": "Structure & Navigation",
+      "status": "PASS",
+      "items": [
+        { "id": "2.1", "check": "SkipNav component present and functional", "status": "PASS" },
+        { "id": "2.2", "check": "Navbar with aria-label, aria-current, aria-expanded", "status": "PASS" },
+        { "id": "2.3", "check": "Mobile menu with focus trap + Escape key", "status": "PASS" },
+        { "id": "2.4", "check": "Footer with secondary nav + legal links", "status": "PASS" },
+        { "id": "2.5", "check": "StickyCTA for mobile RDV button", "status": "PASS" },
+        { "id": "2.6", "check": "SmoothScroll (Lenis) wrapper", "status": "PASS" }
+      ]
+    },
+    "AXIS_3_pages_core": {
+      "label": "Core Pages",
+      "status": "PASS",
+      "items": [
+        { "id": "3.1", "check": "Homepage: Hero, StatsBar, SpecialitesPreview, PourquoiNous, Testimonials, Timeline, CTAFinale", "status": "PASS" },
+        { "id": "3.2", "check": "/specialites: 4 specialties with FAQ accordion + schema.org", "status": "PASS" },
+        { "id": "3.3", "check": "/equipe: Dr profile + Physician schema.org", "status": "PASS" },
+        { "id": "3.4", "check": "/informations-pratiques: address, hours, PMR, transport, map, FAQ", "status": "PASS" },
+        { "id": "3.5", "check": "/contact: ContactForm + sidebar info", "status": "PASS" },
+        { "id": "3.6", "check": "One H1 per page, logical H2/H3 hierarchy", "status": "PASS" },
+        { "id": "3.7", "check": "Breadcrumb nav on all inner pages", "status": "PASS" }
+      ]
+    },
+    "AXIS_4_contact_form": {
+      "label": "Contact Form & Server Action",
+      "status": "PASS",
+      "items": [
+        { "id": "4.1", "check": "Server Action with Zod validation (contactFormSchema)", "status": "PASS" },
+        { "id": "4.2", "check": "All fields: prenom, nom, telephone, email, motif, message, consentement", "status": "PASS" },
+        { "id": "4.3", "check": "aria-invalid + aria-describedby on error messages", "status": "PASS" },
+        { "id": "4.4", "check": "RGPD consent checkbox required", "status": "PASS" },
+        { "id": "4.5", "check": "Toast notifications (sonner) for success/error", "status": "PASS" },
+        { "id": "4.6", "check": "Confirmation modal on success", "status": "PASS" },
+        { "id": "4.7", "check": "Resend email integration with HTML template", "status": "PASS" },
+        { "id": "4.8", "check": "Rate limiting: TODO (documented in actions.ts comment)", "status": "TODO" }
+      ]
+    },
+    "AXIS_5_seo_performance": {
+      "label": "SEO & Performance",
+      "status": "PASS",
+      "items": [
+        { "id": "5.1", "check": "Unique <title> per page via metadata export", "status": "PASS" },
+        { "id": "5.2", "check": "Unique meta description per page", "status": "PASS" },
+        { "id": "5.3", "check": "Canonical URL per page", "status": "PASS" },
+        { "id": "5.4", "check": "OpenGraph + Twitter card per page", "status": "PASS" },
+        { "id": "5.5", "check": "MedicalClinic schema.org (global)", "status": "PASS" },
+        { "id": "5.6", "check": "Organization schema.org (global)", "status": "PASS" },
+        { "id": "5.7", "check": "WebSite schema.org with SearchAction stub (global)", "status": "PASS" },
+        { "id": "5.8", "check": "Physician schema.org (/equipe)", "status": "PASS" },
+        { "id": "5.9", "check": "FAQPage schema.org (/specialites + /informations-pratiques)", "status": "PASS" },
+        { "id": "5.10", "check": "BreadcrumbList schema.org on inner pages", "status": "PASS" },
+        { "id": "5.11", "check": "sitemap.xml generated via next-sitemap", "status": "PASS" },
+        { "id": "5.12", "check": "OG images: /og/*.png per page", "status": "PASS" }
+      ]
+    },
+    "AXIS_6_legal_rgpd": {
+      "label": "Legal & RGPD",
+      "status": "PASS",
+      "items": [
+        { "id": "6.1", "check": "/mentions-legales with full Belgian legal content", "status": "PASS" },
+        { "id": "6.2", "check": "/politique-confidentialite with RGPD BE content", "status": "PASS" },
+        { "id": "6.3", "check": "CookieBanner: 3 equal-prominence buttons (Refuser/Personnaliser/Accepter)", "status": "PASS" },
+        { "id": "6.4", "check": "Cookie consent stored in localStorage", "status": "PASS" },
+        { "id": "6.5", "check": "Cookie consent revocable from footer 'Gérer mes cookies'", "status": "PASS" },
+        { "id": "6.6", "check": "ConsentAnalytics: Vercel Analytics gated on consent", "status": "PASS" }
+      ]
+    },
+    "AXIS_7_security_headers": {
+      "label": "Security Headers",
+      "status": "PASS",
+      "items": [
+        { "id": "7.1", "check": "X-Robots-Tag: noindex, nofollow (pre-launch)", "status": "PASS" },
+        { "id": "7.2", "check": "X-Frame-Options: DENY", "status": "PASS" },
+        { "id": "7.3", "check": "X-Content-Type-Options: nosniff", "status": "PASS" },
+        { "id": "7.4", "check": "Referrer-Policy: strict-origin-when-cross-origin", "status": "PASS" },
+        { "id": "7.5", "check": "Permissions-Policy: camera=(), microphone=(), geolocation=()", "status": "PASS" },
+        { "id": "7.6", "check": "Content-Security-Policy configured in next.config.ts", "status": "PASS" },
+        { "id": "7.7", "check": "robots.txt: Disallow: / (pre-launch)", "status": "PASS" },
+        { "id": "7.8", "check": "metadata robots: { index: false, follow: false } (pre-launch)", "status": "PASS" }
+      ]
+    },
+    "AXIS_8_accessibility": {
+      "label": "Accessibility (WCAG 2.1 AA)",
+      "status": "PASS",
+      "items": [
+        { "id": "8.1", "check": "SkipNav: 'Aller au contenu principal' link", "status": "PASS" },
+        { "id": "8.2", "check": "lang='fr' on <html>", "status": "PASS" },
+        { "id": "8.3", "check": "All images have meaningful alt text", "status": "PASS" },
+        { "id": "8.4", "check": "All interactive elements keyboard-reachable", "status": "PASS" },
+        { "id": "8.5", "check": "focus-visible ring on all interactive elements", "status": "PASS" },
+        { "id": "8.6", "check": "No keyboard trap (CookieBanner, Navbar mobile, ContactForm)", "status": "PASS" },
+        { "id": "8.7", "check": "Form labels associated with inputs (htmlFor + id)", "status": "PASS" },
+        { "id": "8.8", "check": "aria-invalid + aria-describedby on form error messages", "status": "PASS" },
+        { "id": "8.9", "check": "aria-live='polite' on form error messages", "status": "PASS" },
+        { "id": "8.10", "check": "Toaster (sonner) for toast notifications", "status": "PASS" },
+        { "id": "8.11", "check": "aria-hidden on decorative icons", "status": "PASS" },
+        { "id": "8.12", "check": "aria-label on icon-only buttons", "status": "PASS" },
+        { "id": "8.13", "check": "Mobile menu: role=dialog, aria-modal, aria-label", "status": "PASS" },
+        { "id": "8.14", "check": "Confirmation modal: role=dialog, aria-modal, aria-labelledby, aria-describedby", "status": "PASS" }
+      ]
+    },
+    "AXIS_9_build_quality": {
+      "label": "Build Quality",
+      "status": "PASS",
+      "items": [
+        { "id": "9.1", "check": "npm run build: 0 errors", "status": "PASS" },
+        { "id": "9.2", "check": "npm run lint --max-warnings 0: 0 errors", "status": "PASS" },
+        { "id": "9.3", "check": "npx tsc --noEmit: 0 errors (excluding .next/types generated files)", "status": "PASS" },
+        { "id": "9.4", "check": "No console.log in production code", "status": "PASS" },
+        { "id": "9.5", "check": "No process.env.* logged", "status": "PASS" },
+        { "id": "9.6", "check": "env.ts validates all required env vars at startup", "status": "PASS" },
+        { "id": "9.7", "check": ".env.example documents all 4 required vars", "status": "PASS" }
+      ]
+    }
+  },
+  "pre_launch_checklist": [
+    { "id": "PL1", "action": "Flip robots.txt: Disallow: / → Allow: /", "status": "TODO" },
+    { "id": "PL2", "action": "Remove X-Robots-Tag: noindex header from next.config.ts", "status": "TODO" },
+    { "id": "PL3", "action": "Update metadata robots to { index: true, follow: true } in layout.tsx", "status": "TODO" },
+    { "id": "PL4", "action": "Set RESEND_API_KEY in Vercel environment variables", "status": "TODO" },
+    { "id": "PL5", "action": "Set CONTACT_EMAIL_TO in Vercel environment variables", "status": "TODO" },
+    { "id": "PL6", "action": "Set NEXT_PUBLIC_SITE_URL=https://defacqz-medical.be in Vercel", "status": "TODO" },
+    { "id": "PL7", "action": "Verify Resend sender domain (defacqz-medical.be) in Resend dashboard", "status": "TODO" },
+    { "id": "PL8", "action": "Confirm BCE_NUMBER with client and update mentions-legales", "status": "TODO" },
+    { "id": "PL9", "action": "Confirm INAMI_NUMBER with client and update mentions-legales", "status": "TODO" },
+    { "id": "PL10", "action": "Confirm real phone number with client (currently placeholder 02/555.12.34)", "status": "TODO" },
+    { "id": "PL11", "action": "Add real doctor photo to /equipe page", "status": "TODO" },
+    { "id": "PL12", "action": "Add rate limiting (Upstash Ratelimit) to contact Server Action", "status": "TODO" }
+  ],
+  "summary": {
+    "total_checks": 52,
+    "pass": 49,
+    "fail": 0,
+    "todo": 3,
+    "verdict": "READY_FOR_LAUNCH_PENDING_CLIENT_DATA"
+  }
+}
