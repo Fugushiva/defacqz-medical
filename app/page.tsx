@@ -1,4 +1,11 @@
 import type { Metadata } from "next";
+import { Hero } from "@/components/sections/Hero";
+import { StatsBar } from "@/components/sections/StatsBar";
+import { SpecialitesPreview } from "@/components/sections/SpecialitesPreview";
+import { PourquoiNous } from "@/components/sections/PourquoiNous";
+import { Testimonials } from "@/components/sections/Testimonials";
+import { Timeline } from "@/components/sections/Timeline";
+import { CTAFinale } from "@/components/sections/CTAFinale";
 
 export const metadata: Metadata = {
   title: "Des spécialistes en neurosciences, près de chez vous à Saint-Gilles",
@@ -34,14 +41,14 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <section className="flex flex-col items-center justify-center min-h-[60vh] px-4 text-center">
-      <h1 className="text-brand-primary mb-4">
-        Des spécialistes en neurosciences, près de chez vous à Saint-Gilles
-      </h1>
-      <p className="text-neutral-700 max-w-2xl text-lg">
-        Neurochirurgie · Neurologie · Neuropsychologie · Psychiatrie
-      </p>
-      <p className="mt-4 text-neutral-400 text-sm">Contenu complet — Phase M3</p>
-    </section>
+    <>
+      <Hero />
+      <StatsBar />
+      <SpecialitesPreview />
+      <PourquoiNous />
+      <Testimonials />
+      <Timeline />
+      <CTAFinale />
+    </>
   );
 }
