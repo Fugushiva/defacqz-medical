@@ -149,17 +149,32 @@ const specialites = [
 
 // Schema.org JSON-LD
 function SpecialitesSchema() {
-  const medicalSpecialties = specialites.map((s) => ({
+  const BASE_URL = "https://defacqz-medical.vercel.app";
+
+  // Individual MedicalSpecialty schemas x4
+  const medicalSpecialtySchemas = specialites.map((s) => ({
+    "@context": "https://schema.org",
     "@type": "MedicalSpecialty",
+    "@id": `${BASE_URL}/specialites#${s.id}`,
     name: s.title,
     description: s.description,
-    url: `https://defacqz-medical.vercel.app/specialites#${s.id}`,
+    url: `${BASE_URL}/specialites#${s.id}`,
+    relevantSpecialty: {
+      "@type": "MedicalSpecialty",
+      name: s.title,
+    },
     availableService: {
       "@type": "MedicalTherapy",
       name: `Consultation ${s.title}`,
+      provider: {
+        "@type": "MedicalClinic",
+        name: "Defacqz Medical Center 125",
+        url: BASE_URL,
+      },
     },
   }));
 
+  // FAQPage schema
   const faqItems = specialites.flatMap((s) =>
     s.faq.map((item) => ({
       "@type": "Question",
@@ -171,26 +186,50 @@ function SpecialitesSchema() {
     }))
   );
 
-  const schema = [
-    {
-      "@context": "https://schema.org",
-      "@type": "MedicalOrganization",
-      name: "Defacqz Medical Center 125",
-      url: "https://defacqz-medical.vercel.app",
-      medicalSpecialty: medicalSpecialties,
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: faqItems,
-    },
-  ];
+  // BreadcrumbList schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Accueil",
+        item: BASE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Spécialités",
+        item: `${BASE_URL}/specialites`,
+      },
+    ],
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems,
+  };
 
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
+    <>
+      {medicalSpecialtySchemas.map((schema) => (
+        <script
+          key={schema["@id"]}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+    </>
   );
 }
 
