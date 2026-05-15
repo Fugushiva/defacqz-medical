@@ -1,4 +1,8 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { Quote } from "lucide-react";
+import { gsap } from "@/lib/gsap";
 
 const testimonials = [
   {
@@ -25,8 +29,37 @@ const testimonials = [
 ] as const;
 
 export function Testimonials() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (prefersReduced || !sectionRef.current) return;
+
+    const cards = sectionRef.current.querySelectorAll("[data-testimonial]");
+
+    const ctx = gsap.context(() => {
+      gsap.from(cards, {
+        opacity: 0,
+        y: 30,
+        duration: 0.6,
+        stagger: 0.12,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          once: true,
+        },
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       aria-labelledby="testimonials-heading"
       className="py-16 md:py-24 bg-white"
     >
@@ -54,6 +87,7 @@ export function Testimonials() {
           {testimonials.map(({ initials, name, specialty, rating, text }) => (
             <li
               key={name}
+              data-testimonial
               className="flex flex-col gap-4 rounded-xl border border-neutral-200 bg-neutral-50 p-6"
             >
               {/* Quote icon */}

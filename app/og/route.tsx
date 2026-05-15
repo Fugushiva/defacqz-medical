@@ -3,8 +3,6 @@ import type { NextRequest } from "next/server";
 
 export const runtime = "edge";
 
-const BASE_URL = "https://defacqz-medical.vercel.app";
-
 const PAGE_TITLES: Record<string, string> = {
   home: "Neurologie de proximité à Saint-Gilles",
   specialites: "Quatre spécialités en neurosciences",

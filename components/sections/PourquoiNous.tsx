@@ -1,3 +1,8 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import { gsap } from "@/lib/gsap";
+
 const differentiators = [
   {
     number: "01",
@@ -20,8 +25,37 @@ const differentiators = [
 ] as const;
 
 export function PourquoiNous() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (prefersReduced || !sectionRef.current) return;
+
+    const items = sectionRef.current.querySelectorAll("[data-differentiator]");
+
+    const ctx = gsap.context(() => {
+      gsap.from(items, {
+        opacity: 0,
+        y: 40,
+        duration: 0.7,
+        stagger: 0.15,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+          once: true,
+        },
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       aria-labelledby="pourquoi-nous-heading"
       className="py-16 md:py-24 bg-neutral-100"
     >
@@ -47,7 +81,7 @@ export function PourquoiNous() {
         {/* Numbered differentiators */}
         <ul className="grid gap-12 md:grid-cols-3">
           {differentiators.map(({ number, title, description }) => (
-            <li key={number} className="flex flex-col gap-4">
+            <li key={number} data-differentiator className="flex flex-col gap-4">
               {/* Large number */}
               <span
                 className="font-heading font-bold text-brand-accent leading-none select-none"

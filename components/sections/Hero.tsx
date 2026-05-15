@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import { gsap } from "@/lib/gsap";
 import { ArrowRight, Calendar, ExternalLink } from "lucide-react";
 import { CONTACT } from "@/lib/constants";
 
