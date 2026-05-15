@@ -51,6 +51,9 @@ export default function RootLayout({
         <SmoothScroll>
           <SkipNav />
           <Navbar />
+          <div className="border-y border-slate-200 bg-slate-50/80 px-4 py-2 text-center text-xs text-slate-700">
+            Démo non-officielle — proposition de refonte préparée par Jérôme Delodder. Site non affilié à Defacqz Medical Center 125.
+          </div>
           <main id="main-content" className="flex-1 pt-16">
             {children}
           </main>
