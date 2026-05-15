@@ -294,7 +294,7 @@ export default function SpecialitesPage() {
                     <h3 className="font-heading text-lg font-semibold text-neutral-900 mb-4">
                       Symptômes pris en charge
                     </h3>
-                    <ul className="space-y-2" role="list">
+                    <ul className="space-y-2">
                       {symptoms.map((symptom) => (
                         <li
                           key={symptom}

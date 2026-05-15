@@ -63,7 +63,6 @@ export function SpecialitesPreview() {
         {/* Cards grid */}
         <ul
           className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
-          role="list"
         >
           {specialites.map(({ icon: Icon, title, description, href }) => (
             <li key={title}>

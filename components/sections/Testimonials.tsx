@@ -50,7 +50,7 @@ export function Testimonials() {
         </div>
 
         {/* Testimonials grid */}
-        <ul className="grid gap-6 md:grid-cols-3" role="list">
+        <ul className="grid gap-6 md:grid-cols-3">
           {testimonials.map(({ initials, name, specialty, rating, text }) => (
             <li
               key={name}

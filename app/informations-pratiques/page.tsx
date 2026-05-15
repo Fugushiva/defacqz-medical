@@ -290,7 +290,7 @@ export default function InformationsPratiquesPage() {
               <h3 className="font-heading text-lg font-semibold text-neutral-900 mb-3">
                 Accessibilité PMR
               </h3>
-              <ul className="space-y-2 text-sm text-neutral-700" role="list">
+              <ul className="space-y-2 text-sm text-neutral-700">
                 <li className="flex items-start gap-2">
                   <span
                     className="mt-1.5 size-1.5 shrink-0 rounded-full bg-brand-primary"
@@ -341,7 +341,7 @@ export default function InformationsPratiquesPage() {
               <h3 className="font-heading text-lg font-semibold text-neutral-900 mb-3">
                 Transports en commun
               </h3>
-              <ul className="space-y-3 text-sm text-neutral-700" role="list">
+              <ul className="space-y-3 text-sm text-neutral-700">
                 <li>
                   <p className="font-semibold text-neutral-900">Tram</p>
                   <p>Lignes 81, 97 — Arrêt Defacqz (2 min à pied)</p>
@@ -372,7 +372,7 @@ export default function InformationsPratiquesPage() {
               <h3 className="font-heading text-lg font-semibold text-neutral-900 mb-3">
                 Parking & voiture
               </h3>
-              <ul className="space-y-2 text-sm text-neutral-700" role="list">
+              <ul className="space-y-2 text-sm text-neutral-700">
                 <li className="flex items-start gap-2">
                   <span
                     className="mt-1.5 size-1.5 shrink-0 rounded-full bg-brand-primary"

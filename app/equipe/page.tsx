@@ -207,7 +207,7 @@ export default function EquipePage() {
                     <p className="font-semibold text-neutral-900 mb-1">
                       Formation
                     </p>
-                    <ul className="text-neutral-700 text-sm space-y-1" role="list">
+                      <ul className="text-neutral-700 text-sm space-y-1">
                       <li>Doctorat en médecine — Université Libre de Bruxelles (ULB)</li>
                       <li>Spécialisation en neurochirurgie</li>
                       <li>Formation complémentaire en neurosciences cliniques</li>
@@ -230,7 +230,7 @@ export default function EquipePage() {
                     <p className="font-semibold text-neutral-900 mb-1">
                       Domaines de compétence
                     </p>
-                    <ul className="text-neutral-700 text-sm space-y-1" role="list">
+                      <ul className="text-neutral-700 text-sm space-y-1">
                       <li>Neurochirurgie générale</li>
                       <li>Neurologie clinique</li>
                       <li>Épilepsie et troubles du mouvement</li>

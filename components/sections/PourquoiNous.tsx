@@ -47,7 +47,7 @@ export function PourquoiNous() {
         </div>
 
         {/* Arguments */}
-        <ul className="grid gap-8 md:grid-cols-3" role="list">
+        <ul className="grid gap-8 md:grid-cols-3">
           {arguments_.map(({ icon: Icon, title, description }) => (
             <li
               key={title}
