@@ -6,8 +6,11 @@ import { Footer } from "@/components/layout/Footer";
 import { SkipNav } from "@/components/layout/SkipNav";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { StickyCTA } from "@/components/layout/StickyCTA";
+import { CookieBanner } from "@/components/layout/CookieBanner";
+import { ConsentAnalytics } from "@/components/layout/ConsentAnalytics";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { Toaster } from "@/components/ui/sonner";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -56,8 +59,13 @@ export default function RootLayout({
           </main>
           <Footer />
           <StickyCTA />
+          <CookieBanner />
         </SmoothScroll>
         <Toaster position="bottom-right" richColors closeButton />
+        {/* SpeedInsights: no PII, always active */}
+        <SpeedInsights />
+        {/* Analytics: consent-gated via localStorage */}
+        <ConsentAnalytics />
       </body>
     </html>
   );
