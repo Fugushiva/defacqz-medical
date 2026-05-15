@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef, useCallback } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ExternalLink } from "lucide-react";
+import { CONTACT } from "@/lib/constants";
 
 const NAV_LINKS = [
   { href: "/specialites", label: "Spécialités" },
@@ -123,13 +124,24 @@ export function Navbar() {
           })}
         </ul>
 
-        {/* Desktop CTA */}
-        <Link
-          href="/contact"
-          className="hidden md:inline-flex items-center px-4 py-2 rounded-md bg-brand-primary text-white text-sm font-medium hover:bg-brand-primary-hover transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2"
-        >
-          Prendre rendez-vous
-        </Link>
+        {/* Desktop CTAs */}
+        <div className="hidden md:flex items-center gap-3">
+          <a
+            href={CONTACT.doctoranytimeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-sm text-neutral-500 hover:text-brand-primary transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary"
+          >
+            Doctoranytime
+            <ExternalLink className="size-3" aria-hidden="true" />
+          </a>
+          <Link
+            href="/contact"
+            className="inline-flex items-center px-4 py-2 rounded-md bg-brand-primary text-white text-sm font-medium hover:bg-brand-primary-hover transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2"
+          >
+            Prendre rendez-vous
+          </Link>
+        </div>
 
         {/* Mobile hamburger */}
         <button
@@ -185,6 +197,17 @@ export function Navbar() {
               >
                 Prendre rendez-vous
               </Link>
+            </li>
+            <li>
+              <a
+                href={CONTACT.doctoranytimeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-1.5 px-4 py-2 text-sm text-neutral-500 hover:text-brand-primary transition-colors"
+              >
+                Doctoranytime
+                <ExternalLink className="size-3" aria-hidden="true" />
+              </a>
             </li>
           </ul>
         </div>

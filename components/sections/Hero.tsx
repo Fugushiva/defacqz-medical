@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { ArrowRight, Calendar } from "lucide-react";
+import { ArrowRight, Calendar, ExternalLink } from "lucide-react";
+import { CONTACT } from "@/lib/constants";
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -96,6 +97,19 @@ export function Hero() {
               Découvrir nos spécialités
               <ArrowRight className="size-4" aria-hidden="true" />
             </Link>
+          </div>
+
+          {/* Tertiary CTA — Doctoranytime */}
+          <div data-hero-cta className="mt-4">
+            <a
+              href={CONTACT.doctoranytimeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm text-neutral-500 hover:text-brand-primary transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary"
+            >
+              Ou réservez directement sur Doctoranytime
+              <ExternalLink className="size-3.5" aria-hidden="true" />
+            </a>
           </div>
 
           {/* Trust signal */}

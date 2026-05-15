@@ -1,4 +1,4 @@
-import { Accessibility, Star, Stethoscope, Clock } from "lucide-react";
+import { Accessibility, MessageCircle, Stethoscope, Clock } from "lucide-react";
 
 const stats = [
   {
@@ -7,9 +7,9 @@ const stats = [
     label: "spécialités en neurosciences",
   },
   {
-    icon: Star,
-    value: "4,6/5",
-    label: "note Google · 28 avis",
+    icon: MessageCircle,
+    value: "48h",
+    label: "Réponse sous 48h ouvrées",
   },
   {
     icon: Accessibility,
