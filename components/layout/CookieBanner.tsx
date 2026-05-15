@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, startTransition } from "react";
 
 const CONSENT_KEY = "hermes-consent-defacqz-medical-center";
 
@@ -42,7 +42,7 @@ export function CookieBanner() {
   useEffect(() => {
     const consent = loadConsent();
     if (!consent) {
-      setVisible(true);
+      startTransition(() => setVisible(true));
     }
   }, []);
 

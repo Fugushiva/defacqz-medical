@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, startTransition } from "react";
 import { Analytics } from "@vercel/analytics/react";
 
 const CONSENT_KEY = "hermes-consent-defacqz-medical-center";
@@ -20,7 +20,8 @@ export function ConsentAnalytics() {
       const raw = localStorage.getItem(CONSENT_KEY);
       if (raw) {
         const consent = JSON.parse(raw) as ConsentState;
-        setAnalyticsEnabled(consent.analytics === true);
+        const enabled = consent.analytics === true;
+        startTransition(() => setAnalyticsEnabled(enabled));
       }
     } catch {
       // No consent stored — analytics off by default
