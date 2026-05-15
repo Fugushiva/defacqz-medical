@@ -7,6 +7,7 @@ import { SkipNav } from "@/components/layout/SkipNav";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { StickyCTA } from "@/components/layout/StickyCTA";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
+import { Toaster } from "@/components/ui/sonner";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -56,6 +57,7 @@ export default function RootLayout({
           <Footer />
           <StickyCTA />
         </SmoothScroll>
+        <Toaster position="bottom-right" richColors closeButton />
       </body>
     </html>
   );
