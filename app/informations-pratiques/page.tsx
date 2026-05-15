@@ -15,6 +15,7 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
+import { GoogleMapsEmbed } from "@/components/maps/GoogleMapsEmbed";
 
 export const metadata: Metadata = {
   title: "Tout pour préparer votre venue sereinement",
@@ -459,34 +460,7 @@ export default function InformationsPratiquesPage() {
           >
             Plan d&apos;accès
           </h2>
-          {/* Consent-aware map placeholder — Google Maps embed wired in M4 with cookie consent */}
-          <div
-            className="w-full h-80 rounded-xl border border-neutral-200 bg-neutral-200 flex items-center justify-center"
-            role="img"
-            aria-label="Carte de localisation — Rue Defacqz 125, 1060 Saint-Gilles, Bruxelles"
-          >
-            <div className="text-center p-8">
-              <MapPin
-                className="size-10 text-neutral-400 mx-auto mb-3"
-                aria-hidden="true"
-                strokeWidth={1.5}
-              />
-              <p className="text-neutral-500 font-medium mb-1">
-                Rue Defacqz 125, 1060 Saint-Gilles
-              </p>
-              <p className="text-neutral-400 text-sm mb-4">
-                La carte interactive sera disponible après acceptation des cookies
-              </p>
-              <a
-                href="https://maps.google.com/?q=Rue+Defacqz+125+1060+Saint-Gilles+Bruxelles"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg bg-brand-primary px-4 py-2 text-sm font-semibold text-white hover:bg-brand-primary-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary"
-              >
-                Ouvrir dans Google Maps
-              </a>
-            </div>
-          </div>
+          <GoogleMapsEmbed height={400} />
         </div>
       </section>
 
