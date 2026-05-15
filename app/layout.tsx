@@ -8,6 +8,8 @@ import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { StickyCTA } from "@/components/layout/StickyCTA";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { Toaster } from "@/components/ui/sonner";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -34,6 +36,23 @@ export const metadata: Metadata = {
     follow: false,
   },
   metadataBase: new URL("https://defacqz-medical.vercel.app"),
+  openGraph: {
+    siteName: "Defacqz Medical Center 125",
+    locale: "fr_BE",
+    type: "website",
+    images: [
+      {
+        url: "/og?page=home",
+        width: 1200,
+        height: 630,
+        alt: "Defacqz Medical Center 125 — Neurologie de proximité à Saint-Gilles",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og?page=home"],
+  },
 };
 
 export default function RootLayout({
@@ -58,6 +77,8 @@ export default function RootLayout({
           <StickyCTA />
         </SmoothScroll>
         <Toaster position="bottom-right" richColors closeButton />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

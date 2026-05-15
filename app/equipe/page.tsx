@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: "https://defacqz-medical.vercel.app/equipe",
     images: [
       {
-        url: "/og/equipe.png",
+        url: "/og?page=equipe",
         width: 1200,
         height: 630,
         alt: "L'équipe médicale du Defacqz Medical Center 125",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "Les médecins qui prendront soin de vous",
     description:
       "Dr Nordeyn Oulad Ben Taib, neurochirurgien, et l'équipe du DMC 125 à Saint-Gilles.",
-    images: ["/og/equipe.png"],
+    images: ["/og?page=equipe"],
   },
 };
 

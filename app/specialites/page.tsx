@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: "https://defacqz-medical.vercel.app/specialites",
     images: [
       {
-        url: "/og/specialites.png",
+        url: "/og?page=specialites",
         width: 1200,
         height: 630,
         alt: "Spécialités du Defacqz Medical Center 125",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "Quatre spécialités, un seul lieu pour vos soins en neurosciences",
     description:
       "Neurochirurgie, neurologie, neuropsychologie et psychiatrie à Saint-Gilles.",
-    images: ["/og/specialites.png"],
+    images: ["/og?page=specialites"],
   },
 };
 

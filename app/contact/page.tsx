@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: "https://defacqz-medical.vercel.app/contact",
     images: [
       {
-        url: "/og/contact.png",
+        url: "/og?page=contact",
         width: 1200,
         height: 630,
         alt: "Prendre rendez-vous — Defacqz Medical Center 125",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Demandez votre rendez-vous en moins de 2 minutes",
     description:
       "Formulaire rapide, rappel sous 24–48h ouvrées. Defacqz Medical Center 125, Saint-Gilles.",
-    images: ["/og/contact.png"],
+    images: ["/og?page=contact"],
   },
 };
 

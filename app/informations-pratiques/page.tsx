@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     url: "https://defacqz-medical.vercel.app/informations-pratiques",
     images: [
       {
-        url: "/og/informations-pratiques.png",
+        url: "/og?page=informations-pratiques",
         width: 1200,
         height: 630,
         alt: "Informations pratiques — Defacqz Medical Center 125",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Tout pour préparer votre venue sereinement",
     description:
       "Adresse, horaires, accès PMR et transports du cabinet rue Defacqz 125 à Saint-Gilles.",
-    images: ["/og/informations-pratiques.png"],
+    images: ["/og?page=informations-pratiques"],
   },
 };
 

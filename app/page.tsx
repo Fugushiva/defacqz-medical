@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: "https://defacqz-medical.vercel.app/",
     images: [
       {
-        url: "/og/home.png",
+        url: "/og?page=home",
         width: 1200,
         height: 630,
         alt: "Defacqz Medical Center 125 — Cabinet de neurosciences à Saint-Gilles",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
       "Des spécialistes en neurosciences, près de chez vous à Saint-Gilles",
     description:
       "Cabinet de neurosciences à Saint-Gilles (1060). Neurochirurgie, neurologie, neuropsychologie, psychiatrie.",
-    images: ["/og/home.png"],
+    images: ["/og?page=home"],
   },
 };
 
