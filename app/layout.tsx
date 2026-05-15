@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { SkipNav } from "@/components/layout/SkipNav";
+import { SmoothScroll } from "@/components/layout/SmoothScroll";
+import { StickyCTA } from "@/components/layout/StickyCTA";
+import { SchemaOrg } from "@/components/seo/SchemaOrg";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -17,15 +23,16 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Defacqz Medical Center",
-    template: "%s | Defacqz Medical Center",
+    default: "Defacqz Medical Center 125",
+    template: "%s | Defacqz Medical Center 125",
   },
   description:
-    "Centre médical pluridisciplinaire à Bruxelles — médecine générale, spécialistes et soins intégrés.",
+    "Cabinet de neurosciences à Saint-Gilles (1060). Neurochirurgie, neurologie, neuropsychologie, psychiatrie. 4,6/5 sur Google. Prise de rendez-vous rapide.",
   robots: {
     index: false,
     follow: false,
   },
+  metadataBase: new URL("https://defacqz-medical.vercel.app"),
 };
 
 export default function RootLayout({
@@ -38,7 +45,18 @@ export default function RootLayout({
       lang="fr"
       className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <SchemaOrg />
+        <SmoothScroll>
+          <SkipNav />
+          <Navbar />
+          <main id="main-content" className="flex-1 pt-16">
+            {children}
+          </main>
+          <Footer />
+          <StickyCTA />
+        </SmoothScroll>
+      </body>
     </html>
   );
 }
