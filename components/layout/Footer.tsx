@@ -1,7 +1,13 @@
+"use client";
+
 import Link from "next/link";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+
+  function openCookieBanner() {
+    window.dispatchEvent(new Event("open-cookie-banner"));
+  }
 
   return (
     <footer className="bg-neutral-900 text-neutral-200 mt-auto">
@@ -72,10 +78,11 @@ export function Footer() {
               <li>
                 <button
                   type="button"
+                  onClick={openCookieBanner}
                   className="text-neutral-400 hover:text-white transition-colors text-left"
                   aria-label="Gérer mes préférences de cookies"
                 >
-                  Gérer mes cookies
+                  Gérer mes préférences de cookies
                 </button>
               </li>
             </ul>

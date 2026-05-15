@@ -7,6 +7,10 @@ import { z } from "zod";
 
 const envSchema = z.object({
   SITE_URL: z.string().url().default("https://defacqz-medical.vercel.app"),
+  NEXT_PUBLIC_SITE_URL: z
+    .string()
+    .url()
+    .default("https://defacqz-medical.vercel.app"),
   RESEND_API_KEY: z.string().min(1, "RESEND_API_KEY is required"),
   CONTACT_EMAIL_TO: z
     .string()
@@ -17,6 +21,7 @@ const envSchema = z.object({
 function parseEnv() {
   const result = envSchema.safeParse({
     SITE_URL: process.env["SITE_URL"],
+    NEXT_PUBLIC_SITE_URL: process.env["NEXT_PUBLIC_SITE_URL"],
     RESEND_API_KEY: process.env["RESEND_API_KEY"],
     CONTACT_EMAIL_TO: process.env["CONTACT_EMAIL_TO"],
   });
@@ -37,6 +42,9 @@ function parseEnv() {
     // Return with defaults for dev
     return {
       SITE_URL: process.env["SITE_URL"] ?? "https://defacqz-medical.vercel.app",
+      NEXT_PUBLIC_SITE_URL:
+        process.env["NEXT_PUBLIC_SITE_URL"] ??
+        "https://defacqz-medical.vercel.app",
       RESEND_API_KEY: process.env["RESEND_API_KEY"] ?? "",
       CONTACT_EMAIL_TO:
         process.env["CONTACT_EMAIL_TO"] ?? "contact@defacqz-medical.be",
