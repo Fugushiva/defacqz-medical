@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Calendar, Phone, MapPin, Clock } from "lucide-react";
 import { ContactForm } from "@/components/forms/ContactForm";
+import { CONTACT } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Demandez votre rendez-vous en moins de 2 minutes",
@@ -38,10 +39,10 @@ const contactInfoItems = [
     title: "Téléphone",
     content: (
       <a
-        href="tel:+3225551234"
+        href={`tel:${CONTACT.phoneE164}`}
         className="text-brand-primary hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary"
       >
-        02/555.12.34
+        {CONTACT.phoneDisplay}
       </a>
     ),
   },
@@ -72,12 +73,12 @@ const contactInfoItems = [
     title: "Doctoranytime",
     content: (
       <a
-        href="https://www.doctoranytime.be"
+        href={CONTACT.doctoranytimeUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="text-brand-primary hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary"
       >
-        Réserver en ligne
+        Réserver en ligne →
       </a>
     ),
   },

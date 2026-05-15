@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CONTACT, SITE } from "@/lib/constants";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,18 +11,18 @@ export function Footer() {
           {/* Identity */}
           <div>
             <p className="font-heading text-white text-lg font-semibold mb-2">
-              Defacqz Medical Center 125
+              {SITE.name}
             </p>
             <address className="not-italic text-sm text-neutral-400 space-y-1">
-              <p>Rue Defacqz 125</p>
-              <p>1060 Saint-Gilles, Belgique</p>
+              <p>{SITE.address.street}</p>
+              <p>{SITE.address.postalCode} {SITE.address.city}, {SITE.address.country}</p>
               <p className="mt-2">
                 <a
-                  href="tel:+3225390000"
+                  href={`tel:${CONTACT.phoneE164}`}
                   className="hover:text-white transition-colors"
                   aria-label="Appeler le cabinet"
                 >
-                  +32 2 539 00 00
+                  {CONTACT.phoneDisplay}
                 </a>
               </p>
             </address>

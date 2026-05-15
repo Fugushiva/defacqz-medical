@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Calendar, Phone } from "lucide-react";
+import { CONTACT } from "@/lib/constants";
 
 export function CTAFinale() {
   return (
@@ -29,11 +30,11 @@ export function CTAFinale() {
             Demander un rendez-vous
           </Link>
           <a
-            href="tel:+3225551234"
+            href={`tel:${CONTACT.phoneE164}`}
             className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/30 bg-white/10 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
             <Phone className="size-5" aria-hidden="true" />
-            Appeler le cabinet
+            {CONTACT.phoneDisplay}
           </a>
         </div>
 
