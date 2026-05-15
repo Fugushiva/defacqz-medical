@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://defacqz-medical.vercel.app</loc><lastmod>2026-05-15T07:46:01.715Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://defacqz-medical.vercel.app</loc><lastmod>2026-05-15T08:10:09.000Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://defacqz-medical.vercel.app/contact</loc><lastmod>2026-05-15T08:10:09.000Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://defacqz-medical.vercel.app/equipe</loc><lastmod>2026-05-15T08:10:09.000Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://defacqz-medical.vercel.app/informations-pratiques</loc><lastmod>2026-05-15T08:10:09.000Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://defacqz-medical.vercel.app/mentions-legales</loc><lastmod>2026-05-15T08:10:09.000Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://defacqz-medical.vercel.app/politique-confidentialite</loc><lastmod>2026-05-15T08:10:09.000Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://defacqz-medical.vercel.app/specialites</loc><lastmod>2026-05-15T08:10:09.000Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
